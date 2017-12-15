@@ -8,8 +8,15 @@
  
 - Help PR.
 
+# CVE-2017-0785   STEP 1
+
+Now at this point, I am wondering if Armis left this information out of the white paper intentionally, if you send more packets to the device you can dump a lot more memory, and in this memory, you will see some interesting things. They say you can find "encryption key, address space and valuable pointers (of code and or data) that can be used to bypass ASLR while exploiting a separate memory corruption vulnerability", so let's see what I found!
+
+[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/29992468/32984048-b092df5e-ccaf-11e7-9faf-512dd4d59ead.png)](https://youtu.be/n13JtClFG2w)
+
+### CVE-2017-0781   STEP 2    COMING SOON...
+
 # To run, be sure to have pybluez and pwntools installed.
-CVE-2017-0785 PoC
 ```
 sudo apt-get install bluetooth libbluetooth-dev
 sudo pip install pybluez
@@ -21,6 +28,7 @@ sudo pip install pwntools
 The   dangers   of   Bluetooth   implementations:   Unveiling   zero   day vulnerabilities   and   security   flaws   in   modern   Bluetooth   stacks.
 
 # Introduction   to   Bluetooth
+
 
 Bluetooth   is   the   leading   and   most   widespread   protocol   for   short-range   communications. According   to    estimates ,   more   than   8.2   billion   Bluetooth   devices   are   currently   in   use,   and   the number   grows   by   the   day.   Bluetooth   is   implemented   in   a   very   wide   range   of   devices,   from   the most   popular   consumer   products   (Smartphones,   Wearables),   to   the   most   common   appliances   in enterprises   (PCs,   Smart   TVs,   Printers),   and   even   in   the   critical   infrastructure   of   our   lives   -   medical appliances,   cars,   and   many   more.   Bluetooth   is   managed,   licensed   and   maintained   by   the Bluetooth   Special   Interests   Group   (SIG),   which   includes   members   from   several   large   technology companies   such   as   Microsoft,   Intel,   Apple,   IBM,   and   more.
 Though   it   was   first   introduced   to   the   world   in   1998,   Bluetooth   continues   to   develop   with   BLE   and Mesh   topology   as   the   most   interesting   examples.   BLE   (Bluetooth   Low   Energy)   is   the   cool   new variant   of   Bluetooth,   and   is   rapidly   gaining   ground   in   the   market   as   it   allows   a   new   generation   of devices,   such   as   “smart”   sensors   and   remote   controls,   which   have   limited   power   supply   and bandwidth   to   connect   to   existing   Bluetooth   devices   such   as   smartphones   and   PCs.   Aside   from BLE,   a   new   feature   was   introduced   in   Bluetooth   5.0   -   Bluetooth   Mesh.   This   new   feature   changes the   topology   of   Bluetooth   connections   by   allowing   low   level   devices   to   interconnect   and   form larger   networks   with   a   more   elaborate   and   dense   structure.   The   linked   nature   of   the   Mesh topology   enables   a   Bluetooth   network   to   spread   far   and   wide   and   allow   devices   on   the   far   ends of   it   to   communicate.   This   new   feature   is   an   attempt   by   the   Bluetooth   SIG   to   compete   with   other rising   short-range   wireless   protocols   (like   Zigbee,   Z-Wave,   LoRa   and   others)   in   handling   the   ever expanding   realm   of   smart   IoT   devices   and   its   unique   requirements.
